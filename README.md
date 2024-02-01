@@ -1,16 +1,9 @@
 # ui_app
 
-A new Flutter project.
+__Photo about app__
+![promo](https://github.com/Rokobot/social_media_ui/assets/117278851/937c8149-194f-4690-b9a4-a40a4ef8d491)
 
-## Getting Started
+__Gif about app__
+![ui](https://github.com/Rokobot/social_media_ui/assets/117278851/ebd5678d-e012-4960-8e70-f2ddc17c2f8c)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
