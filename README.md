@@ -2,7 +2,8 @@
 
 __Photo about app__
 
-![promo](https://github.com/Rokobot/social_media_ui/assets/117278851/937c8149-194f-4690-b9a4-a40a4ef8d491)
+![app](https://github.com/Rokobot/social_media_ui/assets/117278851/2d10b4b5-210f-42d4-accc-2814d8b34087)
+
 
 __Gif about app__
 
