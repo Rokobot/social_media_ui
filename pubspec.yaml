@@ -39,6 +39,8 @@ dependencies:
   dotted_border: ^2.1.0
   flutter_slidable: ^3.0.1
   vibration: ^1.8.4
+  flutter_svg: ^2.0.9
+  flutter_story: ^1.0.1
 
 dev_dependencies:
   flutter_test:

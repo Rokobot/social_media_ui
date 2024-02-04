@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ui_app/entities/const.dart';
 
 class GroupCall extends StatefulWidget {
@@ -23,6 +26,15 @@ class _GroupCallState extends State<GroupCall> {
     'assets/images/image4.png',
     'assets/images/image2.png',
     'assets/images/image3.png'
+  ];
+
+  List<String> svgItems = [
+    'assets/images/mic.svg',
+    'assets/images/volume.svg',
+    'assets/images/video.svg',
+    'assets/images/message.svg',
+    'assets/images/remove.svg',
+
   ];
 
 
@@ -103,7 +115,7 @@ class _GroupCallState extends State<GroupCall> {
                     SizedBox(
                       height: 150,
                     ),
-                    Expanded(
+                    Flexible(flex:10,
                       child: ShaderMask(
                         blendMode: BlendMode.dstOut,
                         shaderCallback: (Rect bounds) {
@@ -140,11 +152,29 @@ class _GroupCallState extends State<GroupCall> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/items.png'))),
+                    Flexible(flex: 5,
+                      child: Container(
+
+                        height: 50,
+                        child:ListView.builder(scrollDirection: Axis.horizontal ,itemCount: svgItems.length,itemBuilder: (context, index){
+                          return Container(
+                            margin: EdgeInsets.only(right: MediaQuery.of(context).size.width*0.04),
+                            child: CircleAvatar(
+                              radius: 32,
+                              backgroundColor: index == 3 ?CusColors().messageIcon : index == 4 ? CusColors().exitIcon : Colors.grey.withAlpha(100),
+                              child: Stack(
+                                children: [
+                              Center(child: ImageFiltered(imageFilter: ImageFilter.blur(sigmaX: 100,sigmaY: 100))),
+                                  Center(
+                                    child: SvgPicture.asset(svgItems[index], height: 28,
+                                      width: 28,),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        })
+                      ),
                     ),
                     SizedBox(
                       height: 15,

@@ -32,21 +32,21 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: currentPage(),
         bottomNavigationBar: BottomNavigationBar(
-          showUnselectedLabels: true,
-          onTap: (value){
-            setState(() {
-              pageIndex = value;
-            });
-          },
+            showUnselectedLabels: true,
+            onTap: (value){
+              setState(() {
+                pageIndex = value;
+              });
+            },
             currentIndex: pageIndex,
             selectedItemColor: CusColors().selectedLael,
             unselectedItemColor: CusColors().unSelectedLabel,
             items: [
-          BottomNavigationBarItem(icon: Image.asset('assets/images/message.png', color: pageIndex == 0? CusColors().selectedLael: CusColors().cusItemColor,), label: 'Message',),
-          BottomNavigationBarItem(icon:  Image.asset('assets/images/call.png', color: pageIndex == 1 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Calls'),
-          BottomNavigationBarItem(icon:  Image.asset('assets/images/user.png', color: pageIndex == 2 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Contacts'),
-          BottomNavigationBarItem(icon:  Image.asset('assets/images/settings.png', color: pageIndex == 3 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Settings'),
-        ]),
+              BottomNavigationBarItem(icon: Image.asset('assets/images/message.png', color: pageIndex == 0? CusColors().selectedLael: CusColors().cusItemColor,), label: 'Message',),
+              BottomNavigationBarItem(icon:  Image.asset('assets/images/call.png', color: pageIndex == 1 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Calls'),
+              BottomNavigationBarItem(icon:  Image.asset('assets/images/user.png', color: pageIndex == 2 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Contacts'),
+              BottomNavigationBarItem(icon:  Image.asset('assets/images/settings.png', color: pageIndex == 3 ? CusColors().selectedLael : CusColors().unSelectedLabel,), label: 'Settings'),
+            ]),
       ),
     );
   }
