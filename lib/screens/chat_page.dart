@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_app/entities/const.dart';
 
 class ChatPage extends StatefulWidget {
@@ -44,8 +45,9 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                       Expanded(
                           child: ListTile(
-                        leading: Image.asset(
-                          widget.imagePath.toString(),
+                        leading: CircleAvatar(
+                          radius: 30,
+                          backgroundImage: ExactAssetImage(widget.imagePath.toString()),
                         ),
                         title: Text(
                           widget.userName.toString(),

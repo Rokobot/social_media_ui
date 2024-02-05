@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_app/entities/const.dart';
 
 class CreateGroup extends StatefulWidget {
@@ -19,12 +20,12 @@ class _CreateGroupState extends State<CreateGroup> {
     'Annei Ellison',
   ];
   List<String> firstImageList = [
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image3.png'
+    'assets/images/settings/image7.jpg',
+    'assets/images/settings/image8.jpg',
+   'assets/images/settings/image9.jpg',
+  'assets/images/settings/image10.jpg',
+   'assets/images/settings/image11.jpg',
+   'assets/images/settings/image12.jpg',
   ];
 
   @override
@@ -108,10 +109,9 @@ class _CreateGroupState extends State<CreateGroup> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                    child: CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage('assets/images/image6.png'),
-                )),
+                  height: 52,
+                    width: 52,
+                    child: CircleAvatar(backgroundImage: ExactAssetImage('assets/images/home_delete/image1.jpg'),)),
                 SizedBox(
                   width: 10,
                 ),
@@ -152,23 +152,19 @@ class _CreateGroupState extends State<CreateGroup> {
                     margin: EdgeInsets.all(10),
                     child: Stack(
                       children: [
-                        CircleAvatar(
-                          radius: 34,
-                          backgroundImage: AssetImage(firstImageList[index]),
+                        Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(image: AssetImage(firstImageList[index]), fit: BoxFit.cover),
+                              borderRadius: BorderRadius.circular(100)),
                         ),
                         Positioned(
-                            left: 48,
-                            top: 50,
+                            left: 50,
+                            top: 53,
                             child: Container(
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.white),
                                     borderRadius: BorderRadius.circular(100)),
-                                child: CircleAvatar(
-                                  radius: 10,
-                                  backgroundImage:
-                                      AssetImage('assets/images/plus1.png'),
-                                  backgroundColor: Colors.white,
-                                ))),
+                                child: SvgPicture.asset('assets/images/settings/plus.svg', height: 20,width: 20,))),
                       ],
                     ),
                   );

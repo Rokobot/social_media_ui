@@ -14,26 +14,29 @@ class GroupCall extends StatefulWidget {
 class _GroupCallState extends State<GroupCall> {
   ///First user list
   List<String> firstUserList = [
-    'Dean Ronload',
     'Annei Ellison',
     'John Borino',
     'Annei Ellison',
-    'John Borino'
+    'John Borino',
+    'Annei Ellison',
+    'Dean Ronload',
+
   ];
   List<String> firstImageList = [
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
-    'assets/images/image2.png',
-    'assets/images/image3.png'
+    'assets/images/calls/image7.jpg',
+    'assets/images/calls/image8.jpg',
+    'assets/images/calls/image9.jpg',
+    'assets/images/calls/image10.jpg',
+    'assets/images/calls/image11.jpg',
+    'assets/images/calls/image12.jpg',
   ];
 
   List<String> svgItems = [
-    'assets/images/mic.svg',
-    'assets/images/volume.svg',
-    'assets/images/video.svg',
-    'assets/images/message.svg',
-    'assets/images/remove.svg',
+    'assets/images/calls/mic.svg',
+    'assets/images/calls/volume.svg',
+    'assets/images/calls/video.svg',
+    'assets/images/calls/message.svg',
+    'assets/images/calls/remove.svg',
 
   ];
 
@@ -54,7 +57,7 @@ class _GroupCallState extends State<GroupCall> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                            'assets/images/group_call.png',
+                            'assets/images/calls/group_call.png',
                           ),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.only(
@@ -83,12 +86,13 @@ class _GroupCallState extends State<GroupCall> {
                         child: Row(
                       children: [
                         Container(
-                            margin: EdgeInsets.only(left: 10),
-                            child: CircleAvatar(
-                              radius: 25,
-                              backgroundImage:
-                                  AssetImage('assets/images/image3.png'),
-                            )),
+                          margin: EdgeInsets.only(left: 10),
+                          height: 52,
+                          width: 52,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(image: AssetImage('assets/images/calls/image7.jpg'), fit: BoxFit.cover),
+                              borderRadius: BorderRadius.circular(100)),
+                        ),
                         SizedBox(
                           width: 10,
                         ),
@@ -131,10 +135,7 @@ class _GroupCallState extends State<GroupCall> {
                             itemCount: firstImageList.length,
                             itemBuilder: (context, index) {
                               return ListTile(
-                                leading: CircleAvatar(
-                                  backgroundImage:
-                                      AssetImage(firstImageList[index]),
-                                ),
+                                leading: CircleAvatar(radius: 25.5, backgroundImage: ExactAssetImage(firstImageList[index])),
                                 title: Text(
                                   firstUserList[index],
                                   style: TextStyle(
@@ -161,7 +162,7 @@ class _GroupCallState extends State<GroupCall> {
                             margin: EdgeInsets.only(right: MediaQuery.of(context).size.width*0.04),
                             child: CircleAvatar(
                               radius: 32,
-                              backgroundColor: index == 3 ?CusColors().messageIcon : index == 4 ? CusColors().exitIcon : Colors.grey.withAlpha(100),
+                              backgroundColor: index == 3 ?CusColors().messageIcon : index == 4 ? CusColors().exitIcon: Colors.grey.withAlpha(100),
                               child: Stack(
                                 children: [
                               Center(child: ImageFiltered(imageFilter: ImageFilter.blur(sigmaX: 100,sigmaY: 100))),
@@ -197,12 +198,15 @@ class _GroupCallState extends State<GroupCall> {
                       margin: EdgeInsets.all(10),
                       child: Stack(
                         children: [
-                          CircleAvatar(
-                            radius: 34,
-                            backgroundImage: AssetImage(firstImageList[index]),
-                          ),
+                      Container(
+                      height: 65,
+                      width: 65,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage(firstImageList[index]), fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(100)),
+                    ),
                           Positioned(
-                              left: 48,
+                              left: 40,
                               top: 50,
                               child: Container(
                                   decoration: BoxDecoration(

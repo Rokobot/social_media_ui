@@ -1,13 +1,10 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_story/flutter_story.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:status_view/status_view.dart';
 import 'package:ui_app/entities/const.dart';
 import 'package:ui_app/screens/chat_page.dart';
-import 'package:ui_app/screens/story_page.dart';
-import 'package:vibration/vibration.dart';
+
 
 import '../widgets/group_call_widget.dart';
 
@@ -26,19 +23,14 @@ class _HomeDeletedState extends State<HomeDeleted> {
     'Marina',
     'Dean',
     'Max',
-    'Marina',
-    'Dean',
-    'Max'
   ];
   List<String> profileList = [
-    'assets/images/image6.png',
-    'assets/images/image4.png',
-    'assets/images/image3.png',
-    'assets/images/image2.png',
-    'assets/images/image1.png',
-    'assets/images/image3.png',
-    'assets/images/image2.png',
-    'assets/images/image1.png'
+    'assets/images/home_delete/image1.jpg',
+    'assets/images/home_delete/image2.jpg',
+    'assets/images/home_delete/image3.jpg',
+    'assets/images/home_delete/image4.jpg',
+    'assets/images/home_delete/image5.jpg',
+
   ];
   List<Color> colors = [
     Colors.white30,
@@ -46,9 +38,6 @@ class _HomeDeletedState extends State<HomeDeleted> {
     Color(0XFFF5B7BE),
     Color(0XFF98A1F1),
     Color(0XFFFBDC94),
-    Color(0XFFF5B7BE),
-    Color(0XFF98A1F1),
-    Color(0XFFFBDC94)
   ];
 
   ///Users
@@ -58,21 +47,19 @@ class _HomeDeletedState extends State<HomeDeleted> {
     'Labhon Ahraham',
     'Sabila Sayma',
     'John Borino',
-    'Angel Dayna'
-        'Sabila Sayma',
-    'John Borino',
-    'Angel Dayna'
+    'Alex Linderson',
+    'Team Align',
+    'Labhon Ahraham',
   ];
   List<String> secondProfileList = [
-    'assets/images/user1.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
-    'assets/images/user2.png',
-    'assets/images/image1.png',
-    'assets/images/user3.png',
-    'assets/images/user2.png',
-    'assets/images/image1.png',
-    'assets/images/user3.png',
+    'assets/images/home_delete/image1.jpg',
+    'assets/images/home_delete/image2.jpg',
+    'assets/images/home_delete/image3.jpg',
+    'assets/images/home_delete/image4.jpg',
+    'assets/images/home_delete/image5.jpg',
+    'assets/images/home_delete/image1.jpg',
+    'assets/images/home_delete/image2.jpg',
+    'assets/images/home_delete/image3.jpg',
   ];
 
   String? imagePath;
@@ -86,7 +73,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
           ),
           centerTitle: true,
           leading: Container(
-            child: Image.asset('assets/images/search.png'),
+            child: Image.asset('assets/images/home_delete/search.png', color: Colors.white,),
             margin: EdgeInsets.all(6),
             height: 44,
             width: 44,
@@ -99,8 +86,6 @@ class _HomeDeletedState extends State<HomeDeleted> {
           ),
           actions: [
             Container(
-              child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/image6.png')),
               margin: EdgeInsets.all(6),
               height: 44,
               width: 44,
@@ -109,6 +94,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                   color: Color(0xFF363F3B),
                 ),
                 borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(image:AssetImage('assets/images/home_delete/image1.jpg'), fit: BoxFit.cover)
               ),
             ),
           ],
@@ -117,7 +103,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
           headerSliverBuilder: (BuildContext context, bool index) {
             return [
               SliverAppBar(
-                expandedHeight: MediaQuery.of(context).size.height * 0.2,
+                expandedHeight: MediaQuery.of(context).size.height * 0.19,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Container(
                     margin: EdgeInsets.only(left: 10),
@@ -132,6 +118,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                SizedBox(height: 15,),
                                 Container(
                                     decoration: BoxDecoration(
                                         borderRadius:
@@ -145,7 +132,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                                                 borderWidth: 1,
                                                 borderColor: colors[index],
                                                 avatar: Image.asset(
-                                                    profileList[index]),
+                                                    profileList[index], fit: BoxFit.cover,),
                                                 label: Text(
                                                   userList[index],
                                                   style: TextStyle(
@@ -162,7 +149,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                                                           Image.asset(
                                                             height: 300,
                                                             width: 300,
-                                                            'assets/images/elnmusk .jpg'
+                                                            'assets/images/story/elnmusk .jpg'
                                                           ),
                                                           Text('I am never give up', style: TextStyle(color: Colors.white, fontSize: 30),)
                                                         ],
@@ -179,6 +166,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                                             ],
                                           )
                                         : Container(
+                                      height: 115,
                                           child: Column(
                                                                                 mainAxisSize: MainAxisSize.min,
                                               children: [
@@ -189,7 +177,7 @@ class _HomeDeletedState extends State<HomeDeleted> {
                                                       width: 65,
                                                       height: 65,
                                                       child: SvgPicture.asset(
-                                                        'assets/images/status.svg',
+                                                        'assets/images/home_delete/status.svg',
                                                         height: 52,
                                                         width: 52,
                                                       ),
@@ -197,20 +185,23 @@ class _HomeDeletedState extends State<HomeDeleted> {
                                                     Positioned(
                                                       left: 6.9,
                                                       top: 2.8,
-                                                      child: CircleAvatar(
-                                                          radius: 25.5,
-                                                          backgroundImage:
-                                                              ExactAssetImage(
-                                                            profileList[index],
-                                                          )),
+                                                      child: Container(
+                                                        height: 52,
+                                                        width: 52,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(100),
+                                                          image: DecorationImage(image: AssetImage(profileList[index]), fit: BoxFit.cover)
+                                                        ),
+                                                      ),
                                                     ),
                                                     Positioned(
                                                       right: 9,
-                                                      bottom: 10,
-                                                      child: CircleAvatar(
-                                                          radius: 6,
-                                                          child: Image.asset(
-                                                              'assets/images/plus.png')),
+                                                      bottom: 7,
+                                                      child: SvgPicture.asset(
+                                                          'assets/images/home_delete/plus.svg',
+                                                        height: 15,
+                                                        width: 15,
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -274,16 +265,16 @@ class _HomeDeletedState extends State<HomeDeleted> {
                             endActionPane: ActionPane(
                                 motion: const ScrollMotion(),
                                 children: [
-                                  Image.asset(
-                                    'assets/images/notification.png',
+                                  SvgPicture.asset(
+                                    'assets/images/home_delete/notification.svg',
                                     height: 28,
                                     width: 28,
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Image.asset(
-                                    'assets/images/trash.png',
+                                  SvgPicture.asset(
+                                    'assets/images/home_delete/remove.svg',
                                     height: 28,
                                     width: 28,
                                   ),
@@ -291,29 +282,27 @@ class _HomeDeletedState extends State<HomeDeleted> {
                             child: ListTile(
                               leading: index == 1
                                   ? GroupCallWidget()
-                                  : Hero(
-                                      tag: 'userProfile',
-                                      child: Stack(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 25,
-                                            backgroundImage:
-                                                ExactAssetImage(
-                                                    secondProfileList[
-                                                        index]),
-                                          ),
-                                          Positioned(
-                                            bottom: 2,
-                                            left: 37,
-                                            child: CircleAvatar(
-                                              backgroundColor:
-                                                  CusColors().onlineUser,
-                                              radius: 3,
-                                            ),
-                                          )
-                                        ],
+                                  : Stack(
+                                    children: [
+                                      Container(
+                                        height: 52,
+                                        width: 52,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(100),
+                                          image: DecorationImage(image: AssetImage(secondProfileList[index]), fit: BoxFit.cover)
+                                        ),
                                       ),
-                                    ),
+                                      Positioned(
+                                        bottom: 2,
+                                        left: 37,
+                                        child: CircleAvatar(
+                                          backgroundColor:
+                                              CusColors().onlineUser,
+                                          radius: 3,
+                                        ),
+                                      )
+                                    ],
+                                  ),
                               title: Text(
                                 secondUserList[index],
                                 style:
